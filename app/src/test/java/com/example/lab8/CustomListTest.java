@@ -42,6 +42,18 @@ public class CustomListTest {
     }
 
     @Test
+    public void deleteCity(){
+
+
+        CustomList list = new CustomList(null,citylist);
+        City city = new City("Calgary","Alberta");
+        list.addCity(city);
+        list.deleteCity(city);
+        assertThrows( IllegalArgumentException.class, () -> {
+            list.deleteCity(city); });
+
+    }
+    @Test
     public void countCities(){
         CustomList list = new CustomList(null,citylist);
         City city = new City("Calgary","Alberta");
