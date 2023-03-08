@@ -49,6 +49,7 @@ public class CustomListTest {
         City city = new City("Calgary","Alberta");
         list.addCity(city);
         list.deleteCity(city);
+        assertFalse(list.hasCity(city));
         assertThrows( IllegalArgumentException.class, () -> {
             list.deleteCity(city); });
 
